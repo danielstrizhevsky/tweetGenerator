@@ -1,1 +1,3 @@
-potato potato squirrel coke dragonfly waffle potato
+Put some sample text in here. The more sample text you get, the more variation you will have in your output.
+A long sample text will have more words for the program to choose from, so there will be more ways for each word to branch out to other words.
+With more possibilities for branching, the output will be more likely to have diverse outcomes following from every word.

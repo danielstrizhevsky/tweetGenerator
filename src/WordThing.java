@@ -1,11 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.Scanner;
-import java.util.TreeMap;
-
 
 public class WordThing {
 	public static void main(String[] args) throws FileNotFoundException{
@@ -19,23 +15,23 @@ public class WordThing {
 			System.out.print(list.get(i) + " ");
 		}
 		System.out.println();
-		
-		
+		nextWord(list, list, 100);
 	}
-	public static TreeMap<String, Integer> getProbabilities(ArrayList<String> list){
-		TreeMap<String, Integer> probabilities = new TreeMap<String, Integer>();
-		for (int i = 0; i < list.size(); i++){
-			if (! probabilities.containsKey(list.get(i))) {
-				probabilities.put(list.get(i), 1);
-			} else {
-				probabilities.put(list.get(i), (int)probabilities.get(list.get(i)) + 1);
+
+	public static void nextWord(ArrayList<String> reference, ArrayList<String> list, int words) {
+		if (words == 0)
+			return;
+		if (list.size() == 0)
+			return;
+		int totalWords = list.size();
+		int nextIndex = (int) (Math.random() * totalWords);
+		System.out.print(list.get(nextIndex) + " ");
+		ArrayList<String> newList = new ArrayList<String>();
+		for (int i = 0; i < reference.size() - 1; i++){
+			if (reference.get(i).equals(list.get(nextIndex))) {
+				newList.add(reference.get(i + 1));
 			}
 		}
-		return probabilities;
-	}
-	
-	public static String nextWord(ArrayList<String> list) {
-		int totalWords = list.size();
-		return "";
+		nextWord(reference, newList, words - 1);
 	}
 }
