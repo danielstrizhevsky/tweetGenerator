@@ -19,12 +19,7 @@ public class WordThing {
 			System.out.print(list.get(i) + " ");
 		}
 		System.out.println();
-		TreeMap<String, Integer> probabilities = getProbabilities(list);
-		Collection<Integer> c = probabilities.values();
-		Iterator<Integer> itr = c.iterator();
-		while (itr.hasNext()){
-			System.out.println(itr.next());
-		}
+		
 		
 	}
 	public static TreeMap<String, Integer> getProbabilities(ArrayList<String> list){
@@ -37,5 +32,10 @@ public class WordThing {
 			}
 		}
 		return probabilities;
+	}
+	
+	public static String nextWord(ArrayList<String> list) {
+		int totalWords = list.size();
+		return "";
 	}
 }
